@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('edit', 'App\Http\Controllers\Product@edit')->name('edit');
+// Route::get('edit', function () {
+//     return view('edit');
+// });
