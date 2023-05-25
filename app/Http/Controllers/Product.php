@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Productmodel;
 use DB;
 
@@ -77,4 +78,18 @@ class Product extends Controller
     public function backlist(){
         return view('list');
     }
+=======
+use App\Http\Controllers\Product;
+
+class Product extends Controller
+{
+   
+    //edit
+    public function edit(){
+        return view('Bautista-laravel/edit');
+    }
+
+
+
+>>>>>>> 245ec7a9bfdf4882d48320a474304c6a9cd625d6
 }
