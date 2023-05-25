@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
+use App\Http\Controllers\Product;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('add', [Product::class, 'add']);
+Route::get('list', [Product::class, 'backlist']);
+Route::get('list', 'Product@showList');
+Route::get('list', 'Product@getData');
+Route::Post('save', 'Product@save')->name('save');
+Route::get('edit/{id}', 'Product@edit')->name('edit');
+Route::Post('editsave/{id}', 'Product@update')->name('editsave');
+Route::get('delete/{id}', 'Product@die');
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
